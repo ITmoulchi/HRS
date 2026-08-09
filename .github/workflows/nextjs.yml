@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  // Ajoute le nom du dépôt au début des chemins d'images et de ressources
-  basePath: '/HRStherapie',
   images: {
     unoptimized: true,
   },
