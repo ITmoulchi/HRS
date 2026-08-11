@@ -1,18 +1,7 @@
-// Configuration pour l'exportation statique sur GitHub Pages
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'export',
-  // Ajoute le nom du dépôt à l'URL pour que les styles et fichiers soient trouvés
-  basePath: '/HRS',
-  images: {
-    unoptimized: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  /* La configuration par défaut suffit pour Vercel */
 };
 
 export default nextConfig;
