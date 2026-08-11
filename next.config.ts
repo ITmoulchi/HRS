@@ -1,3 +1,4 @@
+// Configuration pour l'exportation statique sur GitHub Pages
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
