@@ -1,13 +1,5 @@
+import Image from "next/image";
 import { site } from "@/lib/site";
-
-const tiles = [
-  { label: "Thérapie manuelle", tone: "from-teal/30 to-teal-soft/20" },
-  { label: "Rééducation sport", tone: "from-navy/20 to-teal/20" },
-  { label: "Dry needling", tone: "from-teal-soft/30 to-mist" },
-  { label: "Conseils bien-être", tone: "from-sand to-teal/15" },
-  { label: "Coulisses cabinet", tone: "from-teal/20 to-navy/15" },
-  { label: "Actualités HRS", tone: "from-mist to-teal-soft/25" },
-] as const;
 
 export default function InstagramFeed() {
   return (
@@ -16,52 +8,88 @@ export default function InstagramFeed() {
       className="scroll-mt-24 bg-navy px-5 py-20 text-white sm:px-8 lg:px-10 lg:py-28"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-teal-soft">
-              {site.instagram.eyebrow}
-            </p>
-            <h2 className="mt-4 font-display text-[clamp(2rem,4.5vw,3.25rem)] font-semibold leading-tight tracking-tight">
-              {site.instagram.title}
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-white/70 sm:text-lg">
-              {site.instagram.intro}
-            </p>
+        <div className="mb-12 lg:mb-16">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-teal-soft">
+            {site.instagram.eyebrow}
+          </p>
+
+          <div className="mt-5 flex flex-col gap-5 border-b border-white/15 pb-8 lg:flex-row lg:items-end lg:justify-between">
+            <div className="flex flex-wrap items-end gap-4">
+              <h2 className="font-display text-[clamp(2.5rem,6vw,4rem)] font-semibold leading-none tracking-tight">
+                {site.instagram.title}
+              </h2>
+              <span className="pb-1 font-display text-lg italic text-teal-soft/80">
+                {site.instagram.count}
+              </span>
+            </div>
+
+            <a
+              href={site.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex shrink-0 items-center gap-3 self-start rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 px-7 py-4 text-sm font-bold text-white shadow-[0_8px_32px_-8px_rgba(236,72,153,0.6)] transition hover:scale-105 hover:shadow-[0_12px_40px_-8px_rgba(236,72,153,0.75)] active:scale-95 lg:self-auto"
+            >
+              <InstagramIcon className="h-5 w-5" />
+              Suivre {site.instagramHandle}
+            </a>
           </div>
 
-          <a
-            href={site.instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex shrink-0 items-center gap-3 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 px-7 py-4 text-sm font-bold text-white shadow-[0_8px_32px_-8px_rgba(236,72,153,0.6)] transition hover:scale-105 hover:shadow-[0_12px_40px_-8px_rgba(236,72,153,0.75)] active:scale-95"
-          >
-            <InstagramIcon className="h-5 w-5" />
-            Suivre {site.instagramHandle}
-          </a>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
+            {site.instagram.intro}
+          </p>
         </div>
 
-        <ul className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:gap-5">
-          {tiles.map((tile) => (
-            <li key={tile.label}>
+        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {site.instagram.tiles.map((tile) => (
+            <li key={tile.number}>
               <a
-                href={site.instagramUrl}
+                href={tile.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative block aspect-square overflow-hidden rounded-[1.25rem] ring-1 ring-white/10"
+                className="group relative block h-[22rem] overflow-hidden rounded-[1.25rem] shadow-[0_4px_20px_rgba(8,40,72,0.25)] transition duration-400 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(8,40,72,0.45)] sm:h-[24rem] lg:h-[26.25rem]"
               >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${tile.tone}`}
-                  aria-hidden
-                />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.25),transparent_55%)]" />
-                <div className="absolute inset-0 flex flex-col justify-between p-4 sm:p-5">
-                  <InstagramIcon className="h-5 w-5 text-navy/70" />
-                  <span className="font-display text-sm font-semibold text-navy sm:text-base">
-                    {tile.label}
-                  </span>
+                <div className="absolute inset-0 overflow-hidden">
+                  <Image
+                    src={tile.imageSrc}
+                    alt={tile.label}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover contrast-105 grayscale-[50%] transition duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 group-hover:grayscale-0"
+                    loading="lazy"
+                  />
                 </div>
-                <span className="absolute inset-0 flex items-center justify-center bg-navy/0 text-sm font-semibold text-white opacity-0 transition group-hover:bg-navy/55 group-hover:opacity-100">
-                  Voir sur Instagram
+
+                <div className="absolute inset-0 bg-navy/15 transition duration-500 group-hover:bg-navy/35" />
+
+                <div className="absolute left-6 top-6 font-display text-[0.95rem] tracking-wide text-white">
+                  <span
+                    className="mb-2 block h-px w-6 bg-white/60"
+                    aria-hidden
+                  />
+                  {tile.number}
+                </div>
+
+                <div className="absolute right-6 top-6 rounded-[1.25rem] bg-white/15 px-1.5 py-2 text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-white/85 backdrop-blur-sm [writing-mode:vertical-rl]">
+                  {tile.tag}
+                </div>
+
+                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7">
+                  <p className="text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-white/60">
+                    {site.instagramHandle}
+                  </p>
+                  <h3 className="mt-2 font-display text-2xl font-semibold text-white transition duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1 sm:text-[1.75rem]">
+                    {tile.label}
+                  </h3>
+                  <p className="mt-1 max-h-0 max-w-[15rem] overflow-hidden text-xs leading-relaxed text-white/75 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:max-h-16 group-hover:opacity-100 sm:text-sm">
+                    {tile.subtitle}
+                  </p>
+                </div>
+
+                <span
+                  className="absolute bottom-6 right-6 flex h-9 w-9 rotate-[-45deg] items-center justify-center rounded-full border border-white/50 text-sm text-white transition duration-400 group-hover:rotate-0 group-hover:bg-white group-hover:text-navy"
+                  aria-hidden
+                >
+                  ↗
                 </span>
               </a>
             </li>

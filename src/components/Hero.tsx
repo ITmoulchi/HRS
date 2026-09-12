@@ -37,7 +37,7 @@ export default function Hero() {
             {site.brand}
           </h1>
 
-          <p className="animate-rise-in delay-200 mt-6 max-w-md font-display text-xl font-medium text-navy-muted sm:text-2xl">
+          <p className="animate-rise-in delay-200 mt-6 max-w-xl font-display text-xl font-medium text-navy-muted sm:text-2xl">
             {site.tagline}
           </p>
 

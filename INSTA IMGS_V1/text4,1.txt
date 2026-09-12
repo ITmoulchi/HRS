@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #faf7f2;
+    padding: 90px 70px;
+  }
+
+  .header {
+    margin-bottom: 60px;
+  }
+
+  .header .label {
+    color: #a8917a;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .header .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid #ddd4c8;
+    padding-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    font-weight: 600;
+    color: #2b2620;
+    line-height: 1;
+  }
+
+  .header .count {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: #a8917a;
+    font-style: italic;
+    padding-bottom: 8px;
+  }
+
+  .header p {
+    color: #8a8175;
+    max-width: 460px;
+    margin-top: 20px;
+    line-height: 1.7;
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  /* GRID avec cartes séparées */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .card {
+    position: relative;
+    text-decoration: none;
+    display: block;
+    overflow: hidden;
+    height: 420px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(43, 38, 32, 0.08);
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 16px 40px rgba(43, 38, 32, 0.18);
+    transform: translateY(-4px);
+  }
+
+  .img-wrap {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.5) contrast(1.05);
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card:hover .img-wrap img {
+    filter: grayscale(0) contrast(1.05);
+    transform: scale(1.06);
+  }
+
+  .tint {
+    position: absolute;
+    inset: 0;
+    background: rgba(43, 38, 32, 0.15);
+    border-radius: 20px;
+    transition: background 0.5s ease;
+  }
+
+  .card:hover .tint {
+    background: rgba(43, 38, 32, 0.35);
+  }
+
+  .number {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+
+  .number::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: rgba(255,255,255,0.6);
+    margin-bottom: 8px;
+  }
+
+  .tag {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 9px;
+    color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: 0.85;
+    writing-mode: vertical-rl;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(6px);
+    padding: 8px 5px;
+    border-radius: 20px;
+  }
+
+  .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 26px;
+  }
+
+  .info .account {
+    font-size: 9px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 8px;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card:hover .info h3 {
+    transform: translateY(-4px);
+  }
+
+  .info .sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 240px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card:hover .info .sub {
+    max-height: 60px;
+    opacity: 1;
+    margin-top: 4px;
+  }
+
+  .arrow {
+    position: absolute;
+    bottom: 26px;
+    right: 24px;
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 15px;
+    transform: rotate(-45deg);
+    transition: all 0.4s ease;
+  }
+
+  .card:hover .arrow {
+    background: white;
+    color: #2b2620;
+    transform: rotate(0deg);
+  }
+
+  @media (max-width: 900px) {
+    body { padding: 50px 24px; }
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .header h1 { font-size: 42px; }
+  }
+
+  @media (max-width: 560px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <span class="label">Journal · Instagram</span>
+  <div class="top-row">
+    <h1>@hrshanane</h1>
+    <span class="count">— 6 moments sélectionnés</span>
+  </div>
+  <p>Une sélection de nos publications : entre expertise clinique, formation continue et accompagnement de nos athlètes.</p>
+</div>
+
+<div class="grid">
+
+  <a href="#" class="card">
+    <div class="img-wrap">
+      <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=700" alt="">
+    </div>
+    <div class="tint"></div>
+    <div class="number">01</div>
+    <div class="tag">POST</div>
+    <div class="info">
+      <div class="account">@hrshanane</div>
+      <h3>Thérapie manuelle</h3>
+      <div class="sub">Échanges d'experts autour des pathologies de l'épaule</div>
+    </div>
+    <div class="arrow">↗</div>
+  </a>
+
+  <a href="#" class="card">
+    <div class="img-wrap">
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700" alt="">
+    </div>
+    <div class="tint"></div>
+    <div class="number">02</div>
+    <div class="tag">POST · 🇲🇦</div>
+    <div class="info">
+      <div class="account">@hrshanane</div>
+      <h3>Rééducation sport</h3>
+      <div class="sub">Accompagnement de nos athlètes de l'Équipe Nationale</div>
+    </div>
+    <div class="arrow">↗</div>
+  </a>
+
+  <a href="#" class="card">
+    <div class="img-wrap">
+      <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=700" alt="">
+    </div>
+    <div class="tint"></div>
+    <div class="number">03</div>
+    <div class="tag">HIGHLIGHT</div>
+    <div class="info">
+      <div class="account">@hrshanane</div>
+      <h3>Dry needling</h3>
+      <div class="sub">Technique ciblée pour soulager la douleur musculaire</div>
+    </div>
+    <div class="arrow">↗</div>
+  </a>
+
+  <a href="#" class="card">
+    <div class="img-wrap">
+      <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=700" alt="">
+    </div>
+    <div class="tint"></div>
+    <div class="number">04</div>
+    <div class="tag">POST · 🎓</div>
+    <div class="info">
+      <div class="account">@hrshanane</div>
+      <h3>Formation académique</h3>
+      <div class="sub">Enseignante en kinésithérapie du sport</div>
+    </div>
+    <div class="arrow">↗</div>
+  </a>
+
+  <a href="#" class="card">
+    <div class="img-wrap">
+      <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=700" alt="">
+    </div>
+    <div class="tint"></div>
+    <div class="number">05</div>
+    <div class="tag">POST</div>
+    <div class="info">
+      <div class="account">@hrshanane</div>
+      <h3>Plateau technique</h3>
+      <div class="sub">Équipements de pointe au service de votre rétablissement</div>
+    </div>
+    <div class="arrow">↗</div>
+  </a>
+
+  <a href="#" class="card">
+    <div class="img-wrap">
+      <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700" alt="">
+    </div>
+    <div class="tint"></div>
+    <div class="number">06</div>
+    <div class="tag">POST · 🌍</div>
+    <div class="info">
+      <div class="account">@hrshanane</div>
+      <h3>Congrès & expertise</h3>
+      <div class="sub">Échanges avec les leaders internationaux</div>
+    </div>
+    <div class="arrow">↗</div>
+  </a>
+
+</div>
+
+</body>
+</html>

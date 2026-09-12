@@ -1,18 +1,17 @@
 import Image from "next/image";
 import { site } from "@/lib/site";
 
-// Map each service to an image and an accent color
 const serviceImages: { src: string; gradient: string }[] = [
-  { src: "/service_tecar.png",        gradient: "from-teal/30 to-sky-200/30" },
-  { src: "/service_sport_rehab.png",  gradient: "from-navy/20 to-teal/20" },
-  { src: "/service_dry_needling.png", gradient: "from-rose-100/40 to-teal/15" },
-  { src: "/service_respiratoire.png", gradient: "from-sky-100/50 to-teal/20" },
-  { src: "/service_perineal.png",     gradient: "from-purple-100/30 to-teal/15" },
-  { src: "/service_hijama.png",       gradient: "from-amber-100/40 to-teal/20" },
-  // 3 services without generated images → elegant illustrated placeholder
-  { src: "",                          gradient: "from-teal/25 to-navy/20" },
-  { src: "",                          gradient: "from-navy/15 to-teal-soft/30" },
-  { src: "",                          gradient: "from-teal-soft/30 to-sand/50" },
+  { src: "/service_kinesitherapie_v2.jpg", gradient: "from-teal/30 to-sky-200/30" },
+  { src: "/service_therapie_manuelle.jpg",gradient: "from-navy/20 to-teal/20" },
+  { src: "/service_sport_rehab.png",      gradient: "from-rose-100/40 to-teal/15" },
+  { src: "/service_reathletisation.jpg",  gradient: "from-sky-100/50 to-teal/20" },
+  { src: "/service_dry_needling.png",     gradient: "from-purple-100/30 to-teal/15" },
+  { src: "/service_tecar.png",            gradient: "from-amber-100/40 to-teal/20" },
+  { src: "/service_hijama.png",           gradient: "from-teal/25 to-navy/20" },
+  { src: "/service_perineal.png",         gradient: "from-navy/15 to-teal-soft/30" },
+  { src: "/service_drainage.jpg",         gradient: "from-teal-soft/30 to-sand/50" },
+  { src: "/service_respiratoire.png",     gradient: "from-sky-100/50 to-teal/20" },
 ];
 
 const placeholderIcons = [PainIcon, AssessmentIcon, DrainageIcon];

@@ -1,21 +1,40 @@
 export const site = {
   brand: "HRStherapy",
   practitioner: "PT. Hanane Harrouss",
-  tagline: "Physio · Thérapie manuelle · Sport",
+  tagline: "Kinésithérapie · Thérapie manuelle ·\u00A0Sport",
   intro:
     "Cabinet de kinésithérapie à Casablanca. Prise en charge personnalisée, thérapie manuelle et rééducation du sport.",
   about: {
     eyebrow: "À propos",
-    title: "Une prise en charge experte, humaine et personnalisée",
-    paragraphs: [
-      "Fondatrice de HRStherapy, PT. Hanane Harrouss accompagne ses patients avec une approche alliant kinésithérapie, thérapie manuelle et rééducation du sport.",
-      "Formatrice certifiée, elle propose une évaluation complète et un plan de soins adapté à chaque profil — du sportif au patient en rééducation post-blessure.",
-    ],
+    cabinet: {
+      title: "À propos du cabinet HRStherapy",
+      imageSrc: "/cabinet.jpeg",
+      imageAlt: "Cabinet HRStherapy à Casablanca",
+      paragraphs: [
+        "Fondée par Hanane Harrouss, HRStherapy est un cabinet dédié à la kinésithérapie, à la thérapie manuelle, à la physiothérapie innovante, à la kinésithérapie du sport et à la réathlétisation.",
+        "Le cabinet s’appuie sur l’expertise clinique, le mouvement et l’activité physique, avec une évaluation précise permettant de proposer, selon les besoins, une prise en charge individualisée dans une démarche cohérente avec les données scientifiques.",
+        "L’objectif est de favoriser une récupération durable et un retour progressif aux activités de la vie quotidienne, au sport et, lorsque cela est pertinent, à la performance.",
+      ],
+    },
+    practitioner: {
+      title: "Hanane Harrouss",
+      subtitle: "Fondatrice de HRStherapy",
+      imageSrc: "/hanane.jpg",
+      imageAlt: "PT. Hanane Harrouss – HRStherapy",
+      paragraphs: [
+        "Diplômée en kinésithérapie à Rabat, Hanane HARROUSS a construit son parcours professionnel autour de la thérapie manuelle, de la prise en charge active des troubles musculosquelettiques et de l’accompagnement des patients dans la récupération de leurs capacités fonctionnelles.",
+        "Son parcours s’est progressivement enrichi par des spécialisations en thérapie manuelle et instrumentale, kinésithérapie du sport et réathlétisation, avec notamment l’obtention d’un Diplôme Universitaire en Kinésithérapie du Sport ainsi qu’une formation certifiante de la FIFA dans le domaine de la médecine du football.",
+        "Cette expertise s’appuie sur une pratique clinique structurée autour du raisonnement clinique, de l’analyse des données scientifiques et de l’intégration d’approches et de technologies adaptées à chaque situation.",
+        "En parallèle de son activité clinique, Hanane HARROUSS a développé une expérience dans l’enseignement universitaire et la formation professionnelle des kinésithérapeutes.",
+        "Elle intervient actuellement comme co-formatrice au sein d’EBP Health Training et de l’AMTM Formation, des organismes engagés dans la promotion d’une pratique fondée sur les preuves scientifiques et ouverts sur l’expertise internationale.",
+        "Ces expériences traduisent une volonté de contribuer au développement d’une kinésithérapie exigeante, en favorisant le partage des connaissances, l’expertise pratique et l’ouverture sur les approches internationales.",
+      ],
+    },
     highlights: [
-      "Kinésithérapie & thérapie manuelle",
-      "Rééducation du sport",
-      "Formatrice certifiée",
-      "Évaluation personnalisée",
+      "Kinésithérapeute",
+      "Thérapeute manuelle",
+      "Kinésithérapeute du sport & Réathlétisation",
+      "Enseignement & Formation continue",
     ],
   },
   city: "Casablanca",
@@ -54,49 +73,54 @@ export const site = {
   },
   services: [
     {
-      title: "Tecar thérapie & Ondes de choc",
+      title: "Kinésithérapie",
       description:
-        "Thérapies énergétiques et mécaniques pour accélérer la guérison et traiter les douleurs chroniques.",
+        "Prise en charge des douleurs, troubles musculosquelettiques et limitations fonctionnelles, après blessure, pathologie ou intervention chirurgicale, avec un programme adapté aux besoins de chaque patient.",
     },
     {
-      title: "Rééducation du sport & Thérapie manuelle",
+      title: "Thérapie manuelle",
       description:
-        "Retour au sport en toute sécurité grâce à des techniques manuelles et un programme sur mesure.",
+        "Techniques manuelles ciblées, fondées sur l’évaluation clinique, pour améliorer la mobilité, moduler les symptômes et favoriser la récupération fonctionnelle.",
     },
     {
-      title: "Dry needling",
+      title: "Kinésithérapie du sport",
       description:
-        "Libération des points trigger et des tensions musculaires profondes par aiguilles fines.",
+        "Prévention et prise en charge des blessures sportives, récupération après l’effort et accompagnement du sportif jusqu’au retour au sport, selon les exigences de sa discipline.",
     },
     {
-      title: "Kinésithérapie respiratoire",
+      title: "Réathlétisation",
       description:
-        "Amélioration de la fonction respiratoire et accompagnement des pathologies pulmonaires.",
+        "Reprise progressive des qualités physiques et des capacités spécifiques au sport après une blessure. Un travail individualisé de force, puissance, vitesse, endurance et contrôle du mouvement prépare le sportif au retour à l’entraînement et à la performance.",
+    },
+    {
+      title: "Dry Needling",
+      description:
+        "Technique de puncture à l’aide de fines aiguilles, ciblant notamment les trigger points myofasciaux afin de moduler la douleur, réduire les tensions musculaires et améliorer la mobilité et la fonction musculaire.",
+    },
+    {
+      title: "Physiothérapie & thérapies instrumentales",
+      description:
+        "TECAR, ondes de choc, TENS, EMS, Dry Needling, crochetage et bandages, utilisés de manière ciblée en complément de la prise en charge active.",
+    },
+    {
+      title: "Hijama — Cupping Therapy",
+      description:
+        "Approche complémentaire utilisant les ventouses, intégrée à la prise en charge selon les données scientifiques disponibles, les indications et les besoins du patient. Elle peut notamment être proposée pour contribuer à la modulation de certaines douleurs et tensions musculaires.",
     },
     {
       title: "Rééducation périnéale",
       description:
-        "Rééducation du plancher pelvien avec un suivi discret, personnalisé et professionnel.",
+        "Prise en charge des troubles du plancher pelvien chez la femme, notamment après l’accouchement, en cas de troubles urinaires, de douleurs pelvi-périnéales ou de faiblesse périnéale, avec un accompagnement adapté à chaque situation.",
     },
     {
-      title: "Hijama (cupping thérapie)",
+      title: "Drainage lymphatique & pressothérapie",
       description:
-        "Thérapie par ventouses pour favoriser la circulation, détendre les muscles et soulager les tensions.",
+        "Techniques visant à favoriser les circulations lymphatique et veineuse et à accompagner la prise en charge des œdèmes selon les indications.",
     },
     {
-      title: "Traitement de la douleur & Rééducation post-blessure",
+      title: "Kinésithérapie respiratoire",
       description:
-        "Prise en charge de la douleur aiguë ou chronique et retour progressif à l'activité.",
-    },
-    {
-      title: "Évaluation complète & prise en charge personnalisée",
-      description:
-        "Bilan initial détaillé pour définir un plan de traitement adapté à votre profil.",
-    },
-    {
-      title: "Drainage lymphatique manuel & Pressothérapie",
-      description:
-        "Réduction des œdèmes, amélioration de la circulation et sensation de légèreté.",
+        "Prise en charge des nourrissons, enfants et adultes pour améliorer la ventilation, favoriser le désencombrement bronchique et optimiser les capacités respiratoires.",
     },
   ],
   nav: [
@@ -108,37 +132,102 @@ export const site = {
   ],
   whyChoose: {
     eyebrow: "Pourquoi nous choisir",
-    title: "Un cabinet où expertise et écoute se rencontrent",
+    title: "Un cabinet où expertise clinique et écoute se rencontrent",
     intro:
-      "HRStherapy combine des formations reconnues, des techniques modernes et une approche humaine pour vous accompagner efficacement.",
+      "HRStherapy combine des formations de haut niveau, un raisonnement clinique rigoureux et une approche active pour vous accompagner vers la réussite de votre rééducation.",
     reasons: [
       {
-        title: "Expertise certifiée",
+        title: "Une prise en charge individualisée",
         description:
-          "Formations en thérapie manuelle (EBP, AMTM) et diplôme FIFA en médecine du football.",
+          "Chaque patient bénéficie d’une évaluation clinique précise et d’un programme adapté à ses besoins, ses objectifs et son évolution.",
       },
       {
-        title: "Prise en charge sur mesure",
+        title: "Une approche fondée sur l’expertise clinique",
         description:
-          "Bilan complet et plan de traitement adapté à votre corps, vos objectifs et votre rythme.",
+          "Les décisions thérapeutiques s’appuient sur l’évaluation, le raisonnement clinique et les données actuelles de la littérature scientifique.",
       },
       {
-        title: "Techniques modernes",
+        title: "Une vision active de la rééducation",
         description:
-          "Tecar, ondes de choc, dry needling, pressothérapie et bien plus pour des résultats concrets.",
+          "Le mouvement et l’exercice thérapeutique occupent une place centrale dans la récupération, avec une progression adaptée aux capacités de chacun.",
       },
       {
-        title: "Sport & rééducation",
+        title: "Kinésithérapie du sport & réathlétisation",
         description:
-          "Accompagnement du sportif amateur au patient en rééducation post-blessure.",
+          "L’objectif ne se limite pas à réduire la douleur : il s’agit de restaurer les capacités physiques et de préparer progressivement au retour aux activités et au sport.",
+      },
+      {
+        title: "Techniques et technologies complémentaires",
+        description:
+          "Thérapie manuelle, Dry Needling, ondes de choc, TECAR thérapie, neurodynamique et autres outils sont intégrés lorsque leur indication est pertinente.",
+      },
+      {
+        title: "Un suivi basé sur l’évolution du patient",
+        description:
+          "La prise en charge est régulièrement réévaluée afin d’adapter les objectifs, les exercices et les moyens thérapeutiques au fil de la progression.",
       },
     ],
   },
   instagram: {
-    eyebrow: "Instagram",
-    title: "Suivez notre actualité",
+    eyebrow: "Journal · Instagram",
+    title: "@hrshanane",
+    count: "— 6 moments sélectionnés",
     intro:
-      "Conseils, coulisses du cabinet et moments de vie professionnelle sur notre compte Instagram.",
+      "Une sélection de nos publications : entre expertise clinique, formation continue et accompagnement de nos athlètes.",
+    tiles: [
+      {
+        number: "01",
+        label: "Kiné du Sport",
+        tag: "POST ·",
+        subtitle:
+          "Accueil de Fatima Ezzahra Bambara (Gardienne de l'équipe nationale) au cabinet HRStherapy.",
+        href: "https://www.instagram.com/p/DYHr-0ViDGq/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
+        imageSrc: "/instagram/1.png",
+      },
+      {
+        number: "02",
+        label: "Notre Philosophie",
+        tag: "POST ·",
+        subtitle:
+          "Présentation de la philosophie de soin chez HRStherapy",
+        href: "https://www.instagram.com/p/DODvAIIiJvi/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
+        imageSrc: "/instagram/2.png",
+      },
+      {
+        number: "03",
+        label: "Thérapie manuelle",
+        tag: "POST ·",
+        subtitle:
+          "Formation & échange avec Germain Delos sur la prise en charge des épaules douloureuses (AMTM)",
+        href: "https://www.instagram.com/p/DT8XrRUCAXz/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
+        imageSrc: "/instagram/3.png",
+      },
+      {
+        number: "04",
+        label: "Haut Niveau",
+        tag: "POST ·",
+        subtitle: "Accueil de Malak Zaid Al Kilani (Championne CAN Futsal) au cabinet HRStherapy.",
+        href: "https://www.instagram.com/p/DXu85xqCM7F/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
+        imageSrc: "/instagram/4.png",
+      },
+      {
+        number: "05",
+        label: "Plateau technique",
+        tag: "POST ·",
+        subtitle:
+          "Enseignement et cours animé par Hanane à l'Université Mohammed VI sur les tendinopathies achilléennes.",
+        href: "https://www.instagram.com/p/DPo72BVCFoA/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
+        imageSrc: "/instagram/5.png",
+      },
+      {
+        number: "06",
+        label: "Diplôme & Expertise",
+        tag: "POST · 🎓",
+        subtitle: "Remise du diplôme de Spécialiste en Kinésithérapie du Sport (DU) avec Ismail Bouzekraoui Alaoui.",
+        href: "https://www.instagram.com/p/C8zPBSktyF3/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
+        imageSrc: "/instagram/6.png",
+      },
+    ],
   },
   contact: {
     eyebrow: "Contact",
