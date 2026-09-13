@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope, Syne } from "next/font/google";
+import { site } from "@/lib/site";
 import "./globals.css";
 
 const syne = Syne({
@@ -15,6 +16,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: "HRStherapy | Kinésithérapie à Casablanca — PT. Hanane Harrouss",
   description:
     "Cabinet de kinésithérapie HRStherapy à Casablanca. Thérapie manuelle, rééducation du sport et prise en charge personnalisée par PT. Hanane Harrouss.",

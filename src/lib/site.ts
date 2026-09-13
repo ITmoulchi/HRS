@@ -1,4 +1,5 @@
 export const site = {
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://hrstherapy.ma",
   brand: "HRStherapy",
   practitioner: "PT. Hanane Harrouss",
   tagline: "Kinésithérapie · Thérapie manuelle ·\u00A0Sport",
