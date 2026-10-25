@@ -42,8 +42,8 @@ export const site = {
   phone: "05 22 45 07 42",
   phoneHref: "tel:+212522450742",
   hours: {
-    weekdays: "Lun – Ven · 9h00 – 18h00",
-    saturday: "Sam · 9h00 – 13h00",
+    weekdays: "Lun – Ven : 9h00 – 18h00",
+    saturday: "",
   },
   address:
     "Angle bd La Résistance et bd Mohammed VI, résidence Albayda 1, 2ème étage, N°212, Casablanca",

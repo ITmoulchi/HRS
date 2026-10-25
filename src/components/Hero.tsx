@@ -42,8 +42,7 @@ export default function Hero() {
           </p>
 
           <p className="animate-rise-in delay-300 mt-5 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
-            Prise en charge personnalisée par {site.practitioner}, formatrice
-            en thérapie manuelle à Casablanca.
+            Votre santé entre des mains expertes : accompagnement personnalisé par {site.practitioner} à Casablanca.
           </p>
 
           <div className="animate-rise-in delay-400 mt-10 flex flex-wrap items-center gap-3">
